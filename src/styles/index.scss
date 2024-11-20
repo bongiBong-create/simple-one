@@ -4,16 +4,6 @@
   box-sizing: border-box;
 }
 
-img {
-  width: 100%;
-}
-
-button {
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-}
-
 ul,
 ol,
 li {
@@ -24,16 +14,33 @@ body {
   height: 100vh;
 }
 
+img {
+  width: 100%;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
 .container {
   height: 100vh;
 }
 
-%btn {
+%btn-icons {
   width: 32px;
   height: 32px;
   padding: 5px;
   border: 1px solid slategrey;
   border-radius: 4px;
+}
+
+%btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #d5d8dd;
 }
 
 %border {
@@ -88,7 +95,7 @@ body {
 }
 
 .settings {
-  @extend %btn;
+  @extend %btn-icons;
 }
 // aside
 .container__box {
@@ -147,7 +154,7 @@ body {
 }
 
 .aside__container--fixed {
-  @extend %btn;
+  @extend %btn-icons;
 }
 
 .aside__lists {
@@ -158,5 +165,96 @@ body {
     align-items: start;
     justify-content: center;
     gap: 10px;
+  }
+}
+
+// =====================================content
+.content {
+  flex: 1;
+}
+.content__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+.content__header--box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  p {
+    font-size: 24px;
+  }
+}
+.content__header--btn {
+  @extend %btn;
+}
+.content__header--btns {
+  button {
+    @extend %btn;
+  }
+  button:first-child {
+    @extend %btn;
+    background: #0078cf;
+    color: #fff;
+  }
+}
+
+// ===============form
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  input {
+    border: 1px solid #d5d8dd;
+  }
+}
+
+.content__form {
+  padding: 5px 16px;
+  h1 {
+    margin-bottom: 24px;
+  }
+}
+
+.form__one,
+.form__second {
+  display: flex;
+  gap: 16px;
+  .form__one--part,
+  .form__second--part {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      input {
+        padding: 6px 8px;
+      }
+    }
+  }
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  input {
+    padding: 6px 8px;
+  }
+}
+
+#coordinats {
+  border: 1px solid #d5d8dd;
+  border-radius: 4px;
+  padding: 4px;
+  div {
+    border: 1px solid #99d5ff;
+    border-radius: 4px;
+    padding: 3px 8px;
+    display: inline-block;
   }
 }
