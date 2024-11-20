@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+body {
+  height: 100vh;
+}
+
+.container {
+  height: 100vh;
+}
+
+%btn {
+  width: 32px;
+  height: 32px;
+  padding: 5px;
+  border: 1px solid slategrey;
+  border-radius: 4px;
+}
+
+%border {
+  border: 1px solid #d5d8dd;
+}
+
+// ===============================================HEADER
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  border: 1px solid #d5d8dd;
+  border-width: 0 0 1px 0;
+}
+
+.header__box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header__box--search {
+  @extend %border;
+  position: relative;
+  margin-right: 8px;
+  width: 296px;
+  input {
+    width: 100%;
+    padding: 6px 8px;
+  }
+}
+
+.header__box--search::after {
+  content: "";
+  position: absolute;
+  background: url("../imgs/icons/search.svg") no-repeat;
+  width: 16px;
+  height: 16px;
+  z-index: 10;
+  top: 8px;
+  right: 8px;
+}
+
+.header__box--avatar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  .header__box--avatar__img img {
+    border-radius: 50%;
+  }
+}
+
+.settings {
+  @extend %btn;
+}
+// aside
+.container__box {
+  display: flex;
+  height: 100%;
+}
+
+.aside {
+  display: flex;
+}
+
+.aside__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  border: 1px solid #d5d8dd;
+  border-width: 0 1px 0 0;
+  padding: 16px;
+}
+
+.aside__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  border: 1px solid #d5d8dd;
+  border-width: 0 1px 0 0;
+}
+
+.aside__search {
+  @extend %border;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 16px;
+  border-width: 0 0 1px 0;
+  input {
+    width: 208px;
+    padding: 6px 8px;
+    position: relative;
+  }
+}
+
+.aside__search::after {
+  content: "";
+  position: absolute;
+  background: url("../imgs/icons/filter.svg") no-repeat;
+  width: 16px;
+  height: 16px;
+  z-index: 10;
+  top: 26px;
+  right: 67px;
+}
+
+.aside__container--fixed {
+  @extend %btn;
+}
+
+.aside__lists {
+  padding: 16px 32px;
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 10px;
+  }
+}
